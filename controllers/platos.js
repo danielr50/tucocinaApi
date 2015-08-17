@@ -1,4 +1,4 @@
-var mongoose = require('mongoose');
+var mongoose = require	('mongoose');
 var path = require('path');
 
 var Platos = mongoose.model('modelPlato');
@@ -17,7 +17,7 @@ exports.addPlato = function(req, res){
 		descripcion: req.body.descripcion,
 		valor: req.body.valor,
 		estado: req.body.estado,
-		// idCategoria: req.body.idCategoria,
+		idCategoria: req.body.idCategoria,
 		imagen: req.body.imagen
 	});
 
@@ -35,6 +35,9 @@ exports.addPlato = function(req, res){
 // mostrar todos los platos - GET
 exports.allPlatos = function(req, res){
 	Platos.find(function(err, platos){
-		res.json(platos);
+		Categorias.populate(platos, {path: 'idCategoria'}, function(err, platos){
+			if(err) res.send(err);
+			res.json(platos);
+		})
 	});
 } //fin allPlatos

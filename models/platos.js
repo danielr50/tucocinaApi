@@ -6,7 +6,7 @@ var platoSchema = new Schema({
 	descripcion: String,
 	valor: Number,
 	estado: String,
-	// idCategoria: {type: Schema.ObjectId, ref: 'modelCategoria'},
+	idCategoria: {type: Schema.ObjectId, ref: 'modelCategoria'},
 	imagen: String
 });
 
