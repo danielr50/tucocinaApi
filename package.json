@@ -1,0 +1,36 @@
+{
+  "nmae": "tuCocinaApi",
+  "version": "1.0.0",
+  "description": "Desarrollo API tu cocina virtual",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Oglit",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^1.4.2",
+    "bcrypt": "^0.8.5",
+    "body-parser": "^1.13.3",
+    "colors": "^1.1.2",
+    "cors": "^2.7.1",
+    "express": "^4.13.3",
+    "favicon": "0.0.2",
+    "jwt-simple": "^0.3.0",
+    "method-override": "^2.3.5",
+    "moment": "^2.10.6",
+    "mongoose": "^4.1.3",
+    "morgan": "^1.6.1",
+    "multer": "^1.0.3",
+    "nodemailer": "^1.4.0",
+    "path": "^0.11.14",
+    "querystring": "^0.2.0",
+    "request": "^2.60.0",
+    "socket.io": "^1.3.6"
+  },
+  "engines": {
+    "node": "0.10.40",
+    "npm": "1.4.28"
+  }
+}
