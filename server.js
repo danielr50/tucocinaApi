@@ -8,6 +8,10 @@ var cors = require('cors');
 var favicon = require('favicon');
 var fs = require('fs');
 var multer = require('multer');
+// socket.io
+var http = require('http');
+var socketio = require('socket.io');
+
 
 // Base de datos MongoDB
 var db = require('./db/db.js');
@@ -24,7 +28,14 @@ app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
 
 //habilita cors en toda la api
-app.use(cors());
+// app.use(cors());
+ app.use(function (req, res, next){
+  res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.header('Access-Control-Allow-Credentials', 'true');
+  next();
+});
 
 // app.use(logger('dev'));
 app.use(methodOverride(function(req, res){
@@ -72,11 +83,38 @@ app.use(function(err, req, res, next) {
   });
 });
 
-// Start the server
+
 app.set('port', process.env.PORT || 8000);//Puerto para express
 
-var server = app.listen(app.get('port'), function() {
+var server = http.createServer(app);
+var io = socketio.listen(server);
+app.set('socketio', io);
+app.set('server', server);
+
+app.get('server').listen(app.get('port'), function(){
   console.log('Express server listening on port ' + server.address().port);
 });
+
+// var server = app.listen(app.get('port'), function() {
+//   console.log('Express server listening on port ' + server.address().port);
+// });
+
+
+// Start the server
+// var server = http.createServer(app);
+// var io = socketio.listen(server);
+// app.set('socketio', io);
+// app.set('server', server);
+// app.set('port', process.env.PORT || 8000);//Puerto para express
+// app.get('server').listen(config.port);
+
+// var server = app.listen(app.get('port'), function() {
+//   console.log('Express server listening on port ' + server.address().port);
+// });
+
+// var server = http.createServer(app);
+// var io = require('socket.io').listen(server.listen(app.get('port'), function(){
+//   console.log('Express server listening on port ' + server.address().port);
+// }));
 
 module.exports = app;
