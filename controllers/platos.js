@@ -44,7 +44,7 @@ exports.allPlatos = function(req, res){
 
 exports.allPlatosCategorias = function(req, res){
 	Platos.find({idCategoria: req.params.id}, function(err, platos){
-		Categorias.populate(platos, {path:idCategoria}, function(err, platos){
+		Categorias.populate(platos, {path: 'idCategoria'}, function(err, platos){
 			if(err) res.send(err);
 			res.json(platos);
 		});
