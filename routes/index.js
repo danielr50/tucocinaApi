@@ -9,6 +9,7 @@ var plato = require('../controllers/platos');
 var categoria = require('../controllers/categorias');
 var restaurantes = require('../controllers/restaurante');
 var ingredientes = require('../controllers/ingredientes');
+var adicionales = require('../controllers/adicionales');
 
 // HOME
 router.get('/', function(req, res){
@@ -25,6 +26,10 @@ router.get('/api/platos_categorias/:id', plato.allPlatosCategorias); //mostrar p
 router.post('/api/ingredientes', ingredientes.addIngrediente); //agregar ingrediente - POST
 router.get('/api/ingredientes', ingredientes.allIngredientes); //mostrar ingredientes - GET
 router.get('/api/ingredientes/:id', ingredientes.allIngredientesPlatos); //mostrar ingredientes - GET
+
+// ADICIONALES
+router.post('/api/adicionales',adicionales.addAdicionales); //agregar un adicional - POST
+router.get('/api/adicionales/:id',adicionales.adicional); //mostrar los adcionales de un plato - GET
 
 // CATEGORIAS
 router.post('/api/categorias',categoria.addCategoria); //agregar categoria - POST
