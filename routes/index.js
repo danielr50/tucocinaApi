@@ -23,6 +23,7 @@ router.get('/api/platos/:id', plato.allPlatosCategorias); //mostrar platos por c
 //INGREDIENTES
 router.post('/api/ingredientes', ingredientes.addIngrediente); //agregar ingrediente - POST
 router.get('/api/ingredientes', ingredientes.allIngredientes); //mostrar ingredientes - GET
+router.get('/api/ingredientes/:id', ingredientes.allIngredientesPlatos); //mostrar ingredientes - GET
 
 // CATEGORIAS
 router.post('/api/categorias',categoria.addCategoria); //agregar categoria - POST
