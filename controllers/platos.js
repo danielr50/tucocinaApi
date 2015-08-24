@@ -43,7 +43,7 @@ exports.allPlatos = function(req, res){
 } //fin allPlatos
 
 exports.onePlato = function(req, res){
-	Platos.findOne({idPlato: req.params.id}, function(err, plato){
+	Platos.findOne({_id: req.params.id}, function(err, plato){
 		if(err) res.send(err);
 		res.json(plato);
 	});
