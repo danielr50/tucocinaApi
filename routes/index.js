@@ -18,6 +18,7 @@ router.get('/', function(req, res){
 // PLATOS
 router.post('/api/platos', plato.addPlato); //agregar plato - POST
 router.get('/api/platos', plato.allPlatos); //mostrar platos - GET
+router.get('/api/platos/:id', plato.onePlato); //mostrar plato por su ID : GET
 router.get('/api/platos/:id', plato.allPlatosCategorias); //mostrar platos por categorias - GET
 
 //INGREDIENTES
