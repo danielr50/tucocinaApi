@@ -19,7 +19,7 @@ router.get('/', function(req, res){
 router.post('/api/platos', plato.addPlato); //agregar plato - POST
 router.get('/api/platos', plato.allPlatos); //mostrar platos - GET
 router.get('/api/platos/:id', plato.onePlato); //mostrar plato por su ID : GET
-router.get('/api/platos/:id', plato.allPlatosCategorias); //mostrar platos por categorias - GET
+router.get('/api/platos_categorias/:id', plato.allPlatosCategorias); //mostrar platos por categorias - GET
 
 //INGREDIENTES
 router.post('/api/ingredientes', ingredientes.addIngrediente); //agregar ingrediente - POST
