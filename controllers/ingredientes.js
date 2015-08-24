@@ -37,3 +37,9 @@ exports.allIngredientes = function(req, res){
 	});
 }
 
+// muestra los ingredientes de un plato en especifico
+exports.allIngredientesPlatos = function(req, res){
+	Ingredientes.find({idPlato: req.params.id}, function(err, ingredientes){
+		res.json(ingredientes);
+	});
+}
