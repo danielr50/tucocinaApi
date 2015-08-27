@@ -4,12 +4,10 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var PedidosSchema = new Schema({
-	plato: String,
-	precio: Number,
+	pedido: String,
+	precioFinal: Number,
 	mesa: Number,
-	cantidad: Number,
-	ingredientes: String,
-	adicionales: String
+	cantidad: Number
 });
 
 module.exports = mongoose.model('modelPedidos', PedidosSchema);
