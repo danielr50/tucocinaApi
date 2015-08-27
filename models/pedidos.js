@@ -5,9 +5,7 @@ var Schema = mongoose.Schema;
 
 var PedidosSchema = new Schema({
 	pedido: String,
-	precioFinal: Number,
-	mesa: Number,
-	cantidad: Number
+	precioFinal: Number
 });
 
 module.exports = mongoose.model('modelPedidos', PedidosSchema);
