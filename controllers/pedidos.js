@@ -18,11 +18,13 @@ exports.addPedido = function(req, res){
 		adicionales: req.body.adicionales
 	});
 
-	pedido.save(function(err, data){
-		if (err) {return res.send({message: 'Error al almacenar los datos'}) }//Si hubo error
-		console.log('se guardo su pedido: '+ pedido.plato);
-		return res
-				.status()
-				.send({pedido: pedido});
-	});
+	console.log(req.body);
+
+	// pedido.save(function(err, data){
+	// 	if (err) {return res.send({message: 'Error al almacenar los datos'}) }//Si hubo error
+	// 	console.log('se guardo su pedido: '+ pedido.plato);
+	// 	return res
+	// 			.status()
+	// 			.send({pedido: pedido});
+	// });
 }
