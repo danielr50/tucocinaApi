@@ -4,7 +4,6 @@ var path = require('path');
 var Platos = mongoose.model('modelPlato');
 var Ingredientes = mongoose.model('modelIngrediente');
 
-
 // CRUD Ingredientes
 //****************
 
