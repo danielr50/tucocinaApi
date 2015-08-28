@@ -24,3 +24,11 @@ exports.addPedido = function(req, res){
 				.send({pedido: pedido});
 	});
 }
+
+// mostrar todos los pedidos
+exports.allPedidos = function(req, res){
+	Pedidos.find(function(err, pedidos){
+		if(err) send(err);
+		res.json(pedidos);
+	});
+}

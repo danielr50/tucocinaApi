@@ -41,7 +41,8 @@ router.post('/api/restaurantes',restaurantes.addRestaurante); // agregar restaur
 router.get('/api/restaurantes',restaurantes.allRestaurantes); // mostrar restaurantes - GET
 
 //PEDIDOS
-router.post('/api/pedidos',pedidos.addPedido);
+router.post('/api/pedidos',pedidos.addPedido); //agregar pedido - POST
+router.get('/api/pedidos',pedidos.allPedidos); //mostrar pedidos - GET
 
 // LOGIN
 router.post('/auth/login', auth.login);
