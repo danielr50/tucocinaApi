@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var PedidosSchema = new Schema({
-	pedido: String,
+	pedido: Array,
 	precioFinal: Number
 });
 
