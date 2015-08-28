@@ -20,7 +20,7 @@ exports.addPedido = function(req, res){
 		if (err) {return res.send({message: 'Error al almacenar los datos'}) }//Si hubo error
 		console.log('se guardo su pedido: '+ pedido.pedido);
 		return res
-				.status()
+				.status(200)
 				.send({pedido: pedido});
 	});
 }
