@@ -42,6 +42,13 @@ exports.allPlatos = function(req, res){
 	});
 } //fin allPlatos
 
+exports.onePlato = function(req, res){
+	Platos.findOne({_id: req.params.id}, function(err, plato){
+		if(err) res.send(err);
+		res.json(plato);
+	});
+}
+
 exports.allPlatosCategorias = function(req, res){
 	Platos.find({idCategoria: req.params.id}, function(err, platos){
 		Categorias.populate(platos, {path: 'idCategoria'}, function(err, platos){
