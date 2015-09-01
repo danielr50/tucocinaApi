@@ -8,7 +8,7 @@ var Pedidos = mongoose.model('modelPedidos');
 
 // agregar pedido - POST
 exports.addPedido = function(req, res){
-	// crel el objeto pedido
+	// creo el objeto pedido
 	var pedido = new Pedidos({
 		pedido: req.body.pedido,
 		precio: req.body.precio

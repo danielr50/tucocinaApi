@@ -11,6 +11,7 @@ var restaurantes = require('../controllers/restaurante');
 var ingredientes = require('../controllers/ingredientes');
 var adicionales = require('../controllers/adicionales');
 var pedidos = require('../controllers/pedidos');
+var promociones = require('../controllers/promociones');
 
 // HOME
 router.get('/', function(req, res){
@@ -40,9 +41,14 @@ router.get('/api/categorias', categoria.allCategorias); //mostrar categorias - G
 router.post('/api/restaurantes',restaurantes.addRestaurante); // agregar restaurante - POST
 router.get('/api/restaurantes',restaurantes.allRestaurantes); // mostrar restaurantes - GET
 
-//PEDIDOS
+// PEDIDOS
 router.post('/api/pedidos',pedidos.addPedido); //agregar pedido - POST
 router.get('/api/pedidos',pedidos.allPedidos); //mostrar pedidos - GET
+
+// PROMOCIONES
+router.post('/api/promociones', promociones.addPromo);
+router.get('/api/promociones', promociones.allPromos);
+
 
 // LOGIN
 router.post('/auth/login', auth.login);
